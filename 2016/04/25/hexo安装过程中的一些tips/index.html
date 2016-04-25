@@ -6,23 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>hexo安装过程中的一些tips | WYG的FE空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？
-答：原来,最新express4.0版本中将 命令工具分离出来了,所以我们还需要安装一个命令工具,命令如下:
-12&quot; npm install -g express-generator&quot;(ps:安装指定版本时需要使用npm install -g express@">
+  <meta name="description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo安装过程中的一些tips">
 <meta property="og:url" content="gdutwyg.github.io/2016/04/25/hexo安装过程中的一些tips/index.html">
 <meta property="og:site_name" content="WYG的FE空间">
-<meta property="og:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？
-答：原来,最新express4.0版本中将 命令工具分离出来了,所以我们还需要安装一个命令工具,命令如下:
-12&quot; npm install -g express-generator&quot;(ps:安装指定版本时需要使用npm install -g express@">
+<meta property="og:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
 <meta property="og:image" content="gdutwyg.github.io/img/express文件.png">
-<meta property="og:updated_time" content="2016-04-25T13:19:47.033Z">
+<meta property="og:updated_time" content="2016-04-25T13:22:57.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo安装过程中的一些tips">
-<meta name="twitter:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？
-答：原来,最新express4.0版本中将 命令工具分离出来了,所以我们还需要安装一个命令工具,命令如下:
-12&quot; npm install -g express-generator&quot;(ps:安装指定版本时需要使用npm install -g express@">
+<meta name="twitter:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
 <meta name="twitter:image" content="gdutwyg.github.io/img/express文件.png">
   
     <link rel="alternative" href="/atom.xml" title="WYG的FE空间" type="application/atom+xml">
@@ -86,7 +80,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -229,6 +223,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>   在node.js安装完成之后安装依赖包express;<br>但是使用express -v出现了 <strong>express不是内部或外部命令</strong>,这是为啥？</p>
+<a id="more"></a>
 <p>答：原来,最新express4.0版本中将 <strong>命令工具</strong>分离出来了,所以我们还需要安装一个<em>命令工具</em>,命令如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" npm install -g express-generator"</span></span><br><span class="line">(ps:安装指定版本时需要使用npm install -g express@3.5.0这样的命令)</span><br></pre></td></tr></table></figure>
 <p>接下来我们可以测试一下express,测试版本用express -V<br>于是我使用express创建一个工程:</p>
