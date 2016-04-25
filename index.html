@@ -123,35 +123,7 @@
 				<section class="switch-part switch-part3">
 					<div id="js-friends">
 					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/正">0</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/在">1</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/更">2</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/新">3</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/中">4</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/，">5</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/请">6</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/静">7</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/候">8</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/。">9</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/。">10</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/。">11</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/。">12</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/。">13</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="/。">14</a>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gdutwyg.github.io/">正在更新中请静候</a>
 			        
 			        </div>
 				</section>
@@ -243,17 +215,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/">Hexo</a>!  &nbsp;&nbsp;下面我讲一下如何在<code>github</code>上面部署<code>hexo</code>主题。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装要准备的环境:</span><br><span class="line">    <span class="string">"node.js"</span></span><br><span class="line">    <span class="string">'hexo主题'</span></span><br><span class="line">    <span class="string">'github'</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a><strong>安装node.js</strong></h2><p> 下载node.js  </p>
-<p> 地址：<a href="https://nodejs.org/en/">node</a></p>
-<p>安装成功之后,验证node和npm是否安装成功(由于新版的NodeJS已经集成了npm)，在cmd中输入</p>
-<p>node -v<br>npm  -v<br>如果显示的是数字，则证明成功;</p>
-<p>接下来安装依赖包:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">键入命令：npm install express -g 回车等待安装express.....</span><br><span class="line"></span><br><span class="line">键入命令：npm install jade  -g  回车等待安装jade.........</span><br><span class="line"></span><br><span class="line">键入命令：npm install mysql  -g 回车等待安装mysql........</span><br><span class="line"></span><br><span class="line"><span class="string">'(ps:g为在全局有效)'</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="安装hexo主题"><a href="#安装hexo主题" class="headerlink" title="安装hexo主题"></a><strong>安装hexo主题</strong></h2><p>安装好node.js之后,接下来安装hexo主题;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure></p>
-<p>可以通过hexo -v 查看hexo 版本</p>
-<h2 id="hexo的使用"><a href="#hexo的使用" class="headerlink" title="hexo的使用"></a><strong>hexo的使用</strong></h2><p>在你喜欢的文件夹下面新建一个文件夹(我选择D:/hexo);<br> 在当前文件夹使用以下指令 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init  //文件夹自动生成建网站所需的文件。</span><br><span class="line">hexo install //会在文件夹下安装node_modules </span><br><span class="line">hexo generate // 自动根据当前目录下文件,生成静态网页</span><br><span class="line">hexo server  //本地测试</span><br></pre></td></tr></table></figure></p>
-<p>然后就可以<a href="http://localhost:4000/">http://localhost:4000/</a> 中打开了<br>记得关server是 <strong>ctrl+c</strong></p>
-<h3 id="发布博客新文章"><a href="#发布博客新文章" class="headerlink" title="发布博客新文章"></a>发布博客新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'hexo new "my first blog" '</span></span><br><span class="line"> //博文会自动生成在博客目录下<span class="built_in">source</span>/_posts/postName.md</span><br><span class="line"><span class="string">'hexo g'</span>  (g 为generate的简写)</span><br><span class="line"><span class="string">'hexo s'</span>  (s为server的简写)</span><br><span class="line">看看http://localhost:4000/中新发布的blog</span><br></pre></td></tr></table></figure>
-<p><strong>如果不想博文在首页全部显示,</strong><br><strong>并能出现阅读全文按钮效果, 需要在你想在首页显示的部分下添加
       
     </div>
     
