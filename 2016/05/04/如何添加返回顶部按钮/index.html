@@ -8,30 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言Hexo已经为用户实现了清晰的模块化设计，我们只需要根据规范编写合适的EJS和JS文件放入指定目录并在所需位置进行引用即可，这里给大家分享如何为Hexo增加返回顶部功能。
 
-返回顶部按钮已经成为一种习惯
-
-修改步骤修改html1.打开文件夹/themes/Yilia/layout/_partial在此文件夹下，新建文件totop.ejs,添加如下代码
-123&amp;lt;div id=&quot;totop&quot;">
+返回顶部按钮已经成为一种习惯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何添加返回顶部按钮">
 <meta property="og:url" content="gdutwyg.github.io/2016/05/04/如何添加返回顶部按钮/index.html">
 <meta property="og:site_name" content="WYG的FE空间">
 <meta property="og:description" content="前言Hexo已经为用户实现了清晰的模块化设计，我们只需要根据规范编写合适的EJS和JS文件放入指定目录并在所需位置进行引用即可，这里给大家分享如何为Hexo增加返回顶部功能。
 
-返回顶部按钮已经成为一种习惯
-
-修改步骤修改html1.打开文件夹/themes/Yilia/layout/_partial在此文件夹下，新建文件totop.ejs,添加如下代码
-123&amp;lt;div id=&quot;totop&quot;">
+返回顶部按钮已经成为一种习惯">
 <meta property="og:image" content="gdutwyg.github.io/img/scrollup.png">
-<meta property="og:updated_time" content="2016-05-04T03:26:06.487Z">
+<meta property="og:updated_time" content="2016-05-04T03:29:55.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何添加返回顶部按钮">
 <meta name="twitter:description" content="前言Hexo已经为用户实现了清晰的模块化设计，我们只需要根据规范编写合适的EJS和JS文件放入指定目录并在所需位置进行引用即可，这里给大家分享如何为Hexo增加返回顶部功能。
 
-返回顶部按钮已经成为一种习惯
-
-修改步骤修改html1.打开文件夹/themes/Yilia/layout/_partial在此文件夹下，新建文件totop.ejs,添加如下代码
-123&amp;lt;div id=&quot;totop&quot;">
+返回顶部按钮已经成为一种习惯">
 <meta name="twitter:image" content="gdutwyg.github.io/img/scrollup.png">
   
     <link rel="alternative" href="/atom.xml" title="WYG的FE空间" type="application/atom+xml">
@@ -395,6 +386,7 @@
 <blockquote>
 <p>返回顶部按钮已经成为一种习惯</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="修改步骤"><a href="#修改步骤" class="headerlink" title="修改步骤"></a><strong>修改步骤</strong></h2><h3 id="修改html"><a href="#修改html" class="headerlink" title="修改html"></a><strong>修改html</strong></h3><p>1.打开文件夹<code>/themes/Yilia/layout/_partial</code>在此文件夹下，新建文件totop.ejs,添加如下代码</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"totop"</span> <span class="attr">style</span>=<span class="string">"position:fixed;bottom:100px;right:50px;cursor: pointer;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">"返回顶部"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/scrollup.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="修改javascript"><a href="#修改javascript" class="headerlink" title="修改javascript"></a><strong>修改javascript</strong></h3><p>2. 打开文件夹<code>/themes/Yilia/source/js</code>，新建文件totop.js，将如下代码复制其中：</p>
