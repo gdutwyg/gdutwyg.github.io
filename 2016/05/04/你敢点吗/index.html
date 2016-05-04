@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>你敢点吗??? | WYG的FE空间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天看酷壳耗子叔的文章时，不经意间又注意到页面右上角的「High一下」功能，玩心顿起，便连High 了好几下。Google 了一下，介绍此项的网页很少，但在有限的三两个页面里却可以看到其源码，实现起来还是很简单的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你敢点吗???">
+<meta property="og:url" content="gdutwyg.github.io/2016/05/04/你敢点吗/index.html">
+<meta property="og:site_name" content="WYG的FE空间">
+<meta property="og:description" content="今天看酷壳耗子叔的文章时，不经意间又注意到页面右上角的「High一下」功能，玩心顿起，便连High 了好几下。Google 了一下，介绍此项的网页很少，但在有限的三两个页面里却可以看到其源码，实现起来还是很简单的。">
+<meta property="og:image" content="gdutwyg.github.io/img/preview.jpg">
+<meta property="og:updated_time" content="2016-05-04T05:33:24.977Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你敢点吗???">
+<meta name="twitter:description" content="今天看酷壳耗子叔的文章时，不经意间又注意到页面右上角的「High一下」功能，玩心顿起，便连High 了好几下。Google 了一下，介绍此项的网页很少，但在有限的三两个页面里却可以看到其源码，实现起来还是很简单的。">
+<meta name="twitter:image" content="gdutwyg.github.io/img/preview.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="WYG的FE空间" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fe.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">gdutwyg</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				    
+							<li><a href="/archives">所有文章</a></li>
+				    
+
+					  <li>
+							<a title="试一试吧，有惊喜" href='javascript:(   function() {
+								function c() {
+									var e = document.createElement("link");
+									e.setAttribute("type", "text/css");
+									e.setAttribute("rel", "stylesheet");
+									e.setAttribute("href", f);
+									e.setAttribute("class", l);
+									document.body.appendChild(e)
+								}
+							 
+								function h() {
+									var e = document.getElementsByClassName(l);
+									for (var t = 0; t < e.length; t++) {
+										document.body.removeChild(e[t])
+									}
+								}
+							 
+								function p() {
+									var e = document.createElement("div");
+									e.setAttribute("class", a);
+									document.body.appendChild(e);
+									setTimeout(function() {
+										document.body.removeChild(e)
+									}, 100)
+								}
+							 
+								function d(e) {
+									return {
+										height : e.offsetHeight,
+										width : e.offsetWidth
+									}
+								}
+							 
+								function v(i) {
+									var s = d(i);
+									return s.height > e && s.height < n && s.width > t && s.width < r
+								}
+							 
+								function m(e) {
+									var t = e;
+									var n = 0;
+									while (!!t) {
+										n += t.offsetTop;
+										t = t.offsetParent
+									}
+									return n
+								}
+							 
+								function g() {
+									var e = document.documentElement;
+									if (!!window.innerWidth) {
+										return window.innerHeight
+									} else if (e && !isNaN(e.clientHeight)) {
+										return e.clientHeight
+									}
+									return 0
+								}
+							 
+								function y() {
+									if (window.pageYOffset) {
+										return window.pageYOffset
+									}
+									return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+								}
+							 
+								function E(e) {
+									var t = m(e);
+									return t >= w && t <= b + w
+								}
+							 
+								function S() {
+									var e = document.createElement("audio");
+									e.setAttribute("class", l);
+									e.src = i;
+									e.loop = false;
+									e.addEventListener("canplay", function() {
+										setTimeout(function() {
+											x(k)
+										}, 500);
+										setTimeout(function() {
+											N();
+											p();
+											for (var e = 0; e < O.length; e++) {
+												T(O[e])
+											}
+										}, 15500)
+									}, true);
+									e.addEventListener("ended", function() {
+										N();
+										h()
+									}, true);
+									e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+									document.body.appendChild(e);
+									e.play()
+								}
+							 
+								function x(e) {
+									e.className += " " + s + " " + o
+								}
+							 
+								function T(e) {
+									e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+								}
+							 
+								function N() {
+									var e = document.getElementsByClassName(s);
+									var t = new RegExp("\\b" + s + "\\b");
+									for (var n = 0; n < e.length; ) {
+										e[n].className = e[n].className.replace(t, "")
+									}
+								}
+							 
+								var e = 30;
+								var t = 30;
+								var n = 350;
+								var r = 350;
+								var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+								var s = "mw-harlem_shake_me";
+								var o = "im_first";
+								var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+								var a = "mw-strobe_light";
+								var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+								var l = "mw_added_css";
+								var b = g();
+								var w = y();
+								var C = document.getElementsByTagName("*");
+								var k = null;
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										if (E(A)) {
+											k = A;
+											break
+										}
+									}
+								}
+								if (A === null) {
+									console.warn("Could not find a node of the right size. Please try a different page.");
+									return
+								}
+								c();
+								S();
+								var O = [];
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										O.push(A)
+									}
+								}
+		            })()'>你敢点吗？</a>
+            </li>
+
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gdutwyg" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2944811073/home?wvr=5&lf=reg" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yu-zhi-san-da" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gdutwyg.github.io/">正在更新中请静候</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁？一个即将毕业的大四狗，一个可怜巴巴的单身狗，一个即将踏入职场的前端狗</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">gdutwyg</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/fe.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">gdutwyg</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		       <li>
+							<a title="试一试吧，有惊喜" href='javascript:(   function() {
+								function c() {
+									var e = document.createElement("link");
+									e.setAttribute("type", "text/css");
+									e.setAttribute("rel", "stylesheet");
+									e.setAttribute("href", f);
+									e.setAttribute("class", l);
+									document.body.appendChild(e)
+								}
+							 
+								function h() {
+									var e = document.getElementsByClassName(l);
+									for (var t = 0; t < e.length; t++) {
+										document.body.removeChild(e[t])
+									}
+								}
+							 
+								function p() {
+									var e = document.createElement("div");
+									e.setAttribute("class", a);
+									document.body.appendChild(e);
+									setTimeout(function() {
+										document.body.removeChild(e)
+									}, 100)
+								}
+							 
+								function d(e) {
+									return {
+										height : e.offsetHeight,
+										width : e.offsetWidth
+									}
+								}
+							 
+								function v(i) {
+									var s = d(i);
+									return s.height > e && s.height < n && s.width > t && s.width < r
+								}
+							 
+								function m(e) {
+									var t = e;
+									var n = 0;
+									while (!!t) {
+										n += t.offsetTop;
+										t = t.offsetParent
+									}
+									return n
+								}
+							 
+								function g() {
+									var e = document.documentElement;
+									if (!!window.innerWidth) {
+										return window.innerHeight
+									} else if (e && !isNaN(e.clientHeight)) {
+										return e.clientHeight
+									}
+									return 0
+								}
+							 
+								function y() {
+									if (window.pageYOffset) {
+										return window.pageYOffset
+									}
+									return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+								}
+							 
+								function E(e) {
+									var t = m(e);
+									return t >= w && t <= b + w
+								}
+							 
+								function S() {
+									var e = document.createElement("audio");
+									e.setAttribute("class", l);
+									e.src = i;
+									e.loop = false;
+									e.addEventListener("canplay", function() {
+										setTimeout(function() {
+											x(k)
+										}, 500);
+										setTimeout(function() {
+											N();
+											p();
+											for (var e = 0; e < O.length; e++) {
+												T(O[e])
+											}
+										}, 15500)
+									}, true);
+									e.addEventListener("ended", function() {
+										N();
+										h()
+									}, true);
+									e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+									document.body.appendChild(e);
+									e.play()
+								}
+							 
+								function x(e) {
+									e.className += " " + s + " " + o
+								}
+							 
+								function T(e) {
+									e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+								}
+							 
+								function N() {
+									var e = document.getElementsByClassName(s);
+									var t = new RegExp("\\b" + s + "\\b");
+									for (var n = 0; n < e.length; ) {
+										e[n].className = e[n].className.replace(t, "")
+									}
+								}
+							 
+								var e = 30;
+								var t = 30;
+								var n = 350;
+								var r = 350;
+								var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+								var s = "mw-harlem_shake_me";
+								var o = "im_first";
+								var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+								var a = "mw-strobe_light";
+								var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+								var l = "mw_added_css";
+								var b = g();
+								var w = y();
+								var C = document.getElementsByTagName("*");
+								var k = null;
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										if (E(A)) {
+											k = A;
+											break
+										}
+									}
+								}
+								if (A === null) {
+									console.warn("Could not find a node of the right size. Please try a different page.");
+									return
+								}
+								c();
+								S();
+								var O = [];
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										O.push(A)
+									}
+								}
+		            })()'>你敢点吗？</a>
+           </li>
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gdutwyg" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2944811073/home?wvr=5&lf=reg" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yu-zhi-san-da" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-你敢点吗" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/04/你敢点吗/" class="article-date">
+  	<time datetime="2016-05-04T05:12:28.000Z" itemprop="datePublished">2016-05-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      你敢点吗???
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看酷壳耗子叔的文章时，不经意间又注意到页面右上角的「High一下」功能，玩心顿起，便连High 了好几下。Google 了一下，介绍此项的网页很少，但在有限的三两个页面里却可以看到其源码，实现起来还是很简单的。</p>
+<a id="more"></a>
+<p>对于 Hexo 用户，可以这样做：<br>在 <code>Hexo/themes/light/layout/_partial/left-col.ejs</code> 中的<code>&lt;ul&gt;</code>标签内部，增加一对<code>&lt;li&gt;</code>标签，并把如下内容拷贝进去：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">"把这个链接拖到你的Chrome收藏夹工具栏中"</span> <span class="attr">href</span>=<span class="string">'javascript:(function() &#123;</span><br><span class="line">    function c() &#123;</span><br><span class="line">        var e = document.createElement("link");</span><br><span class="line">        e.setAttribute("type", "text/css");</span><br><span class="line">        e.setAttribute("rel", "stylesheet");</span><br><span class="line">        e.setAttribute("href", f);</span><br><span class="line">        e.setAttribute("class", l);</span><br><span class="line">        document.body.appendChild(e)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function h() &#123;</span><br><span class="line">        var e = document.getElementsByClassName(l);</span><br><span class="line">        for (var t = 0; t &lt; e.length; t++) &#123;</span><br><span class="line">            document.body.removeChild(e[t])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function p() &#123;</span><br><span class="line">        var e = document.createElement("div");</span><br><span class="line">        e.setAttribute("class", a);</span><br><span class="line">        document.body.appendChild(e);</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            document.body.removeChild(e)</span><br><span class="line">        &#125;, 100)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function d(e) &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            height : e.offsetHeight,</span><br><span class="line">            width : e.offsetWidth</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function v(i) &#123;</span><br><span class="line">        var s = d(i);</span><br><span class="line">        return s.height &gt; e &amp;&amp; s.height &lt; n &amp;&amp; s.width &gt; t &amp;&amp; s.width &lt; r</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function m(e) &#123;</span><br><span class="line">        var t = e;</span><br><span class="line">        var n = 0;</span><br><span class="line">        while (!!t) &#123;</span><br><span class="line">            n += t.offsetTop;</span><br><span class="line">            t = t.offsetParent</span><br><span class="line">        &#125;</span><br><span class="line">        return n</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function g() &#123;</span><br><span class="line">        var e = document.documentElement;</span><br><span class="line">        if (!!window.innerWidth) &#123;</span><br><span class="line">            return window.innerHeight</span><br><span class="line">        &#125; else if (e &amp;&amp; !isNaN(e.clientHeight)) &#123;</span><br><span class="line">            return e.clientHeight</span><br><span class="line">        &#125;</span><br><span class="line">        return 0</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function y() &#123;</span><br><span class="line">        if (window.pageYOffset) &#123;</span><br><span class="line">            return window.pageYOffset</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function E(e) &#123;</span><br><span class="line">        var t = m(e);</span><br><span class="line">        return t &gt;= w &amp;&amp; t &lt;= b + w</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function S() &#123;</span><br><span class="line">        var e = document.createElement("audio");</span><br><span class="line">        e.setAttribute("class", l);</span><br><span class="line">        e.src = i;</span><br><span class="line">        e.loop = false;</span><br><span class="line">        e.addEventListener("canplay", function() &#123;</span><br><span class="line">            setTimeout(function() &#123;</span><br><span class="line">                x(k)</span><br><span class="line">            &#125;, 500);</span><br><span class="line">            setTimeout(function() &#123;</span><br><span class="line">                N();</span><br><span class="line">                p();</span><br><span class="line">                for (var e = 0; e &lt; O.length; e++) &#123;</span><br><span class="line">                    T(O[e])</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, 15500)</span><br><span class="line">        &#125;, true);</span><br><span class="line">        e.addEventListener("ended", function() &#123;</span><br><span class="line">            N();</span><br><span class="line">            h()</span><br><span class="line">        &#125;, true);</span><br><span class="line">        e.innerHTML = " &lt;p&gt;If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.&lt;/p&gt; &lt;p&gt;";</span><br><span class="line">        document.body.appendChild(e);</span><br><span class="line">        e.play()</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function x(e) &#123;</span><br><span class="line">        e.className += " " + s + " " + o</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function T(e) &#123;</span><br><span class="line">        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function N() &#123;</span><br><span class="line">        var e = document.getElementsByClassName(s);</span><br><span class="line">        var t = new RegExp("\\b" + s + "\\b");</span><br><span class="line">        for (var n = 0; n &lt; e.length; ) &#123;</span><br><span class="line">            e[n].className = e[n].className.replace(t, "")</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    var e = 30;</span><br><span class="line">    var t = 30;</span><br><span class="line">    var n = 350;</span><br><span class="line">    var r = 350;</span><br><span class="line">    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";</span><br><span class="line">    var s = "mw-harlem_shake_me";</span><br><span class="line">    var o = "im_first";</span><br><span class="line">    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];</span><br><span class="line">    var a = "mw-strobe_light";</span><br><span class="line">    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";</span><br><span class="line">    var l = "mw_added_css";</span><br><span class="line">    var b = g();</span><br><span class="line">    var w = y();</span><br><span class="line">    var C = document.getElementsByTagName("*");</span><br><span class="line">    var k = null;</span><br><span class="line">    for (var L = 0; L &lt; C.length; L++) &#123;</span><br><span class="line">        var A = C[L];</span><br><span class="line">        if (v(A)) &#123;</span><br><span class="line">            if (E(A)) &#123;</span><br><span class="line">                k = A;</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (A === null) &#123;</span><br><span class="line">        console.warn("Could not find a node of the right size. Please try a different page.");</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    c();</span><br><span class="line">    S();</span><br><span class="line">    var O = [];</span><br><span class="line">    for (var L = 0; L &lt; C.length; L++) &#123;</span><br><span class="line">        var A = C[L];</span><br><span class="line">        if (v(A)) &#123;</span><br><span class="line">            O.push(A)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()    '</span>&gt;</span>High一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>代码块的内容不需要再做任何修改。<br><br>为了便于直观理解，截图如下：<br><img src="/img/preview.jpg" alt="preview"></p>
+<p>可以点击我博客左边栏的「你敢点吗？」玩一玩。<br>你也试试吧！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/04/如何添加返回顶部按钮/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何添加返回顶部按钮</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="你敢点吗" data-title="你敢点吗???" data-url="gdutwyg.github.io/2016/05/04/你敢点吗/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 gdutwyg
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+ <div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;">
+      <a title="返回顶部">
+        <img src="/img/scrollup.png"/>
+      </a>
+ </div>
+<script src="/js/totop.js"></script>
+
+
+  </div>
+</body>
+</html>
