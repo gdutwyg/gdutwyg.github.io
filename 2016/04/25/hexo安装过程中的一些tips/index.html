@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="WYG的FE空间">
 <meta property="og:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
 <meta property="og:image" content="gdutwyg.github.io/img/express文件.png">
-<meta property="og:updated_time" content="2016-05-04T06:03:45.871Z">
+<meta property="og:updated_time" content="2016-05-05T15:55:47.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo安装过程中的一些tips">
 <meta name="twitter:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
@@ -535,9 +535,9 @@
         <p>   在node.js安装完成之后安装依赖包express;<br>但是使用express -v出现了 <strong>express不是内部或外部命令</strong>,这是为啥？</p>
 <a id="more"></a>
 <p>答：原来,最新express4.0版本中将 <strong>命令工具</strong>分离出来了,所以我们还需要安装一个<em>命令工具</em>,命令如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" npm install -g express-generator"</span></span><br><span class="line">(ps:安装指定版本时需要使用npm install -g express@3.5.0这样的命令)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> npm install -g express-generator</span><br><span class="line">(ps:安装指定版本时需要使用npm install -g express@3.5.0这样的命令)</span><br></pre></td></tr></table></figure>
 <p>接下来我们可以测试一下express,测试版本用express -V<br>于是我使用express创建一个工程:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"express helloworld"</span> (ps:推荐用GitShell);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express helloworld (ps:推荐用GitShell);</span><br></pre></td></tr></table></figure>
 <p><img src="/img/express文件.png" alt="img"></p>
 <p>在helloworld文件夹下新建helloworld.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">"http"</span>);</span><br><span class="line">http.createServer(<span class="keyword">function</span>(request, response) &#123;  </span><br><span class="line">    response.writeHead(200, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span>&#125;);  </span><br><span class="line">    response.write(<span class="string">"Hello World"</span>);  </span><br><span class="line">    response.end();</span><br><span class="line">&#125;).listen(8888);</span><br><span class="line">console.log(<span class="string">"nodejs start listen 8888 port!"</span>);</span><br></pre></td></tr></table></figure></p>
 <p>进入node.js command prompt 命令窗口,进入helloworld当前目录</p>
