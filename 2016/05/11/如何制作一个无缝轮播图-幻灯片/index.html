@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>如何制作一个无缝轮播图(幻灯片) | WYG的FE空间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;网站上经常见到焦点图动画，焦点图的动画有多种，如：淡入淡出型、上下滑动型、左右滑动型、左右滑动无缝型，对比用户体验的话，无缝轮播方式是最好的，因为在播放多张图片的情况下不会出现间断感，这篇文章用最简单易懂的方式，让你学会独立制作与开发。 
+核心内容：1.JavaScript 函数2.setInterval 定时器3.jQuery 的 animate 动画4.jQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何制作一个无缝轮播图(幻灯片)">
+<meta property="og:url" content="gdutwyg.github.io/2016/05/11/如何制作一个无缝轮播图-幻灯片/index.html">
+<meta property="og:site_name" content="WYG的FE空间">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;网站上经常见到焦点图动画，焦点图的动画有多种，如：淡入淡出型、上下滑动型、左右滑动型、左右滑动无缝型，对比用户体验的话，无缝轮播方式是最好的，因为在播放多张图片的情况下不会出现间断感，这篇文章用最简单易懂的方式，让你学会独立制作与开发。 
+核心内容：1.JavaScript 函数2.setInterval 定时器3.jQuery 的 animate 动画4.jQ">
+<meta property="og:image" content="gdutwyg.github.io/img/slide-1.jpg">
+<meta property="og:image" content="gdutwyg.github.io/img/slide-2.jpg">
+<meta property="og:updated_time" content="2016-05-11T15:56:56.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何制作一个无缝轮播图(幻灯片)">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;网站上经常见到焦点图动画，焦点图的动画有多种，如：淡入淡出型、上下滑动型、左右滑动型、左右滑动无缝型，对比用户体验的话，无缝轮播方式是最好的，因为在播放多张图片的情况下不会出现间断感，这篇文章用最简单易懂的方式，让你学会独立制作与开发。 
+核心内容：1.JavaScript 函数2.setInterval 定时器3.jQuery 的 animate 动画4.jQ">
+<meta name="twitter:image" content="gdutwyg.github.io/img/slide-1.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="WYG的FE空间" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fe.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">gdutwyg</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				    
+							<li><a href="/archives">所有文章</a></li>
+				    
+
+					  <li>
+							<a title="试一试吧，有惊喜" href='javascript:(   function() {
+								function c() {
+									var e = document.createElement("link");
+									e.setAttribute("type", "text/css");
+									e.setAttribute("rel", "stylesheet");
+									e.setAttribute("href", f);
+									e.setAttribute("class", l);
+									document.body.appendChild(e)
+								}
+							 
+								function h() {
+									var e = document.getElementsByClassName(l);
+									for (var t = 0; t < e.length; t++) {
+										document.body.removeChild(e[t])
+									}
+								}
+							 
+								function p() {
+									var e = document.createElement("div");
+									e.setAttribute("class", a);
+									document.body.appendChild(e);
+									setTimeout(function() {
+										document.body.removeChild(e)
+									}, 100)
+								}
+							 
+								function d(e) {
+									return {
+										height : e.offsetHeight,
+										width : e.offsetWidth
+									}
+								}
+							 
+								function v(i) {
+									var s = d(i);
+									return s.height > e && s.height < n && s.width > t && s.width < r
+								}
+							 
+								function m(e) {
+									var t = e;
+									var n = 0;
+									while (!!t) {
+										n += t.offsetTop;
+										t = t.offsetParent
+									}
+									return n
+								}
+							 
+								function g() {
+									var e = document.documentElement;
+									if (!!window.innerWidth) {
+										return window.innerHeight
+									} else if (e && !isNaN(e.clientHeight)) {
+										return e.clientHeight
+									}
+									return 0
+								}
+							 
+								function y() {
+									if (window.pageYOffset) {
+										return window.pageYOffset
+									}
+									return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+								}
+							 
+								function E(e) {
+									var t = m(e);
+									return t >= w && t <= b + w
+								}
+							 
+								function S() {
+									var e = document.createElement("audio");
+									e.setAttribute("class", l);
+									e.src = i;
+									e.loop = false;
+									e.addEventListener("canplay", function() {
+										setTimeout(function() {
+											x(k)
+										}, 500);
+										setTimeout(function() {
+											N();
+											p();
+											for (var e = 0; e < O.length; e++) {
+												T(O[e])
+											}
+										}, 15500)
+									}, true);
+									e.addEventListener("ended", function() {
+										N();
+										h()
+									}, true);
+									e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+									document.body.appendChild(e);
+									e.play()
+								}
+							 
+								function x(e) {
+									e.className += " " + s + " " + o
+								}
+							 
+								function T(e) {
+									e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+								}
+							 
+								function N() {
+									var e = document.getElementsByClassName(s);
+									var t = new RegExp("\\b" + s + "\\b");
+									for (var n = 0; n < e.length; ) {
+										e[n].className = e[n].className.replace(t, "")
+									}
+								}
+							 
+								var e = 30;
+								var t = 30;
+								var n = 350;
+								var r = 350;
+								var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+								var s = "mw-harlem_shake_me";
+								var o = "im_first";
+								var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+								var a = "mw-strobe_light";
+								var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+								var l = "mw_added_css";
+								var b = g();
+								var w = y();
+								var C = document.getElementsByTagName("*");
+								var k = null;
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										if (E(A)) {
+											k = A;
+											break
+										}
+									}
+								}
+								if (A === null) {
+									console.warn("Could not find a node of the right size. Please try a different page.");
+									return
+								}
+								c();
+								S();
+								var O = [];
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										O.push(A)
+									}
+								}
+		            })()'>你敢点吗？</a>
+            </li>
+
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gdutwyg" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2944811073/home?wvr=5&lf=reg" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yu-zhi-san-da" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo主题/" style="font-size: 20px;">hexo主题</a> <a href="/tags/前端杂谈/" style="font-size: 10px;">前端杂谈</a> <a href="/tags/技术杂谈/" style="font-size: 15px;">技术杂谈</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gdutwyg.github.io/">正在更新中请静候</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁？一个即将毕业的大四狗，一个可怜巴巴的单身狗，一个即将踏入职场的前端狗</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">gdutwyg</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/fe.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">gdutwyg</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		       <li>
+							<a title="试一试吧，有惊喜" href='javascript:(   function() {
+								function c() {
+									var e = document.createElement("link");
+									e.setAttribute("type", "text/css");
+									e.setAttribute("rel", "stylesheet");
+									e.setAttribute("href", f);
+									e.setAttribute("class", l);
+									document.body.appendChild(e)
+								}
+							 
+								function h() {
+									var e = document.getElementsByClassName(l);
+									for (var t = 0; t < e.length; t++) {
+										document.body.removeChild(e[t])
+									}
+								}
+							 
+								function p() {
+									var e = document.createElement("div");
+									e.setAttribute("class", a);
+									document.body.appendChild(e);
+									setTimeout(function() {
+										document.body.removeChild(e)
+									}, 100)
+								}
+							 
+								function d(e) {
+									return {
+										height : e.offsetHeight,
+										width : e.offsetWidth
+									}
+								}
+							 
+								function v(i) {
+									var s = d(i);
+									return s.height > e && s.height < n && s.width > t && s.width < r
+								}
+							 
+								function m(e) {
+									var t = e;
+									var n = 0;
+									while (!!t) {
+										n += t.offsetTop;
+										t = t.offsetParent
+									}
+									return n
+								}
+							 
+								function g() {
+									var e = document.documentElement;
+									if (!!window.innerWidth) {
+										return window.innerHeight
+									} else if (e && !isNaN(e.clientHeight)) {
+										return e.clientHeight
+									}
+									return 0
+								}
+							 
+								function y() {
+									if (window.pageYOffset) {
+										return window.pageYOffset
+									}
+									return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+								}
+							 
+								function E(e) {
+									var t = m(e);
+									return t >= w && t <= b + w
+								}
+							 
+								function S() {
+									var e = document.createElement("audio");
+									e.setAttribute("class", l);
+									e.src = i;
+									e.loop = false;
+									e.addEventListener("canplay", function() {
+										setTimeout(function() {
+											x(k)
+										}, 500);
+										setTimeout(function() {
+											N();
+											p();
+											for (var e = 0; e < O.length; e++) {
+												T(O[e])
+											}
+										}, 15500)
+									}, true);
+									e.addEventListener("ended", function() {
+										N();
+										h()
+									}, true);
+									e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+									document.body.appendChild(e);
+									e.play()
+								}
+							 
+								function x(e) {
+									e.className += " " + s + " " + o
+								}
+							 
+								function T(e) {
+									e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+								}
+							 
+								function N() {
+									var e = document.getElementsByClassName(s);
+									var t = new RegExp("\\b" + s + "\\b");
+									for (var n = 0; n < e.length; ) {
+										e[n].className = e[n].className.replace(t, "")
+									}
+								}
+							 
+								var e = 30;
+								var t = 30;
+								var n = 350;
+								var r = 350;
+								var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+								var s = "mw-harlem_shake_me";
+								var o = "im_first";
+								var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+								var a = "mw-strobe_light";
+								var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+								var l = "mw_added_css";
+								var b = g();
+								var w = y();
+								var C = document.getElementsByTagName("*");
+								var k = null;
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										if (E(A)) {
+											k = A;
+											break
+										}
+									}
+								}
+								if (A === null) {
+									console.warn("Could not find a node of the right size. Please try a different page.");
+									return
+								}
+								c();
+								S();
+								var O = [];
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										O.push(A)
+									}
+								}
+		            })()'>你敢点吗？</a>
+           </li>
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gdutwyg" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2944811073/home?wvr=5&lf=reg" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yu-zhi-san-da" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-如何制作一个无缝轮播图-幻灯片" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/11/如何制作一个无缝轮播图-幻灯片/" class="article-date">
+  	<time datetime="2016-05-11T10:47:24.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何制作一个无缝轮播图(幻灯片)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端杂谈/">前端杂谈</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;网站上经常见到焦点图动画，焦点图的动画有多种，如：淡入淡出型、上下滑动型、左右滑动型、左右滑动无缝型，对比用户体验的话，无缝轮播方式是最好的，因为在播放多张图片的情况下不会出现间断感，这篇文章用最简单易懂的方式，让你学会独立制作与开发。 </p>
+<p>核心内容：<br>1.JavaScript 函数<br>2.setInterval 定时器<br>3.jQuery 的 animate 动画<br>4.jQuery 的 mouseover 及 click 事件<br>5.无缝概念的理解 </p>
+<a id="more"></a>
+<h3 id="1-新建一个ul，width为你所要承载的并列的图片的width，我的为10000px-然后让包含ul的div为图片的宽度，超出的图片为overflow：hidden"><a href="#1-新建一个ul，width为你所要承载的并列的图片的width，我的为10000px-然后让包含ul的div为图片的宽度，超出的图片为overflow：hidden" class="headerlink" title="1.新建一个ul，width为你所要承载的并列的图片的width，我的为10000px;然后让包含ul的div为图片的宽度，超出的图片为overflow：hidden"></a><strong>1.新建一个ul，width为你所要承载的并列的图片的width，我的为10000px;然后让包含ul的div为图片的宽度，超出的图片为overflow：hidden</strong></h3><p><img src="/img/slide-1.jpg" alt="slide-1"><br><img src="/img/slide-2.jpg" alt="slide-2"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"banner-img"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> &gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/1.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/2.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/3.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/4.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/5.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"banner-dot"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!-- 下面圆点按钮利用js根据图片生成--&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 左右按钮 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn btn-l"</span>&gt;</span>&amp;lt;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn btn-r"</span>&gt;</span>&amp;gt;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.banner</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">550px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.banner</span> <span class="selector-class">.banner-img</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">5000px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.banner</span> <span class="selector-class">.banner-img</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.banner</span> <span class="selector-class">.banner-dot</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.banner</span> <span class="selector-class">.banner-dot</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#888</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">cursor</span>:pointer;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.banner</span> <span class="selector-class">.banner-dot</span> <span class="selector-tag">li</span><span class="selector-class">.on</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f60</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.banner</span> <span class="selector-class">.btn</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>:-<span class="number">25px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0,0,0,0.5); </span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.banner</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.btn</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.banner</span>  <span class="selector-class">.btn-l</span>&#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.banner</span> <span class="selector-class">.btn-r</span>&#123;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-引入jquery，利用animate实现img左移右移-鼠标滑入时animate暂停，还有如何实现无缝呢，在最后的图片clone第一张图片，接着通过css-肉眼看不见-实现快速跳到第二张实现无缝"><a href="#2-引入jquery，利用animate实现img左移右移-鼠标滑入时animate暂停，还有如何实现无缝呢，在最后的图片clone第一张图片，接着通过css-肉眼看不见-实现快速跳到第二张实现无缝" class="headerlink" title="2.引入jquery，利用animate实现img左移右移;鼠标滑入时animate暂停，还有如何实现无缝呢，在最后的图片clone第一张图片，接着通过css(肉眼看不见)实现快速跳到第二张实现无缝"></a><strong>2.引入jquery，利用animate实现img左移右移;鼠标滑入时animate暂停，还有如何实现无缝呢，在最后的图片clone第一张图片，接着通过css(肉眼看不见)实现快速跳到第二张实现无缝</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">var</span> i=<span class="number">0</span>;<span class="comment">//animate滑动时图片的下标，首张为0;第二张为1,以此类推</span></span><br><span class="line">          </span><br><span class="line">          <span class="keyword">var</span>  clone=$(<span class="string">'.banner .banner-img li'</span>).first().clone();</span><br><span class="line">               </span><br><span class="line">               $(<span class="string">'.banner .banner-img'</span>).append(clone);</span><br><span class="line">          <span class="keyword">var</span>  size=$(<span class="string">'.banner .banner-img li'</span>).size();</span><br><span class="line">              <span class="comment">//根据图片动态生成底部圆点</span></span><br><span class="line">               <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>;j &lt; size<span class="number">-1</span>; j++) &#123;</span><br><span class="line">                  $(<span class="string">'.banner .banner-dot'</span>).append(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">               $(<span class="string">'.banner .banner-dot li'</span>).first().addClass(<span class="string">'on'</span>);</span><br><span class="line">         </span><br><span class="line">      <span class="comment">//左边按钮</span></span><br><span class="line">        $(<span class="string">'.btn-l'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">             moveL();</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">//左移函数</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">moveL</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">               i++;</span><br><span class="line">               <span class="keyword">if</span> (i==size) &#123;</span><br><span class="line">                   $(<span class="string">'.banner-img'</span>).css(&#123;left:<span class="number">0</span>&#125;); <span class="comment">//通过css去实现跳到第一张，肉眼看不见</span></span><br><span class="line">                   i=<span class="number">1</span>; <span class="comment">//第二张了</span></span><br><span class="line">                &#125;</span><br><span class="line">               $(<span class="string">'.banner-img'</span>).stop().animate(&#123;left:<span class="number">-550</span>*i&#125;,<span class="number">500</span>);</span><br><span class="line">               <span class="comment">//实现圆点和图片的一一对应</span></span><br><span class="line">               <span class="keyword">if</span> (i==size<span class="number">-1</span>) &#123;</span><br><span class="line">                 $(<span class="string">'.banner .banner-dot li'</span>).eq(<span class="number">0</span>).addClass(<span class="string">'on'</span>).siblings().removeClass(<span class="string">'on'</span>);</span><br><span class="line">               &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                 $(<span class="string">'.banner .banner-dot li'</span>).eq(i).addClass(<span class="string">'on'</span>).siblings().removeClass(<span class="string">'on'</span>);</span><br><span class="line">               &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//右边按钮</span></span><br><span class="line">         $(<span class="string">'.btn-r'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              moveR();</span><br><span class="line">      </span><br><span class="line">        &#125;)</span><br><span class="line">         <span class="comment">//右移函数</span></span><br><span class="line">         <span class="function"><span class="keyword">function</span> <span class="title">moveR</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                i--;</span><br><span class="line">               <span class="keyword">if</span> (i==<span class="number">-1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'.banner-img'</span>).css(&#123;left:-(size<span class="number">-1</span>)*<span class="number">550</span>&#125;);</span><br><span class="line">                    i=size<span class="number">-2</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               $(<span class="string">'.banner-img'</span>).stop().animate(&#123;left:<span class="number">-550</span>*i&#125;,<span class="number">500</span>);</span><br><span class="line">                 $(<span class="string">'.banner .banner-dot li'</span>).eq(i).addClass(<span class="string">'on'</span>).siblings().removeClass(<span class="string">'on'</span>);</span><br><span class="line">              </span><br><span class="line">         &#125;</span><br><span class="line">         <span class="comment">//鼠标划入圆点切换</span></span><br><span class="line">          $(<span class="string">'.banner .banner-dot li'</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">             index=$(<span class="keyword">this</span>).index();</span><br><span class="line">             i=index;<span class="comment">//实现i与index的统一</span></span><br><span class="line">             $(<span class="string">'.banner-img'</span>).stop().animate(&#123;left:<span class="number">-550</span>*index&#125;,<span class="number">500</span>);</span><br><span class="line">             $(<span class="keyword">this</span>).addClass(<span class="string">'on'</span>).siblings().removeClass(<span class="string">'on'</span>);</span><br><span class="line">          &#125;)</span><br><span class="line">         </span><br><span class="line"></span><br><span class="line">     <span class="comment">// // 动画开始</span></span><br><span class="line">      <span class="keyword">var</span> time=setInterval(moveL,<span class="number">2000</span>);</span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">      <span class="comment">//当鼠标划入时停止动画</span></span><br><span class="line">       $(<span class="string">'.banner'</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              clearInterval(time);</span><br><span class="line">              </span><br><span class="line">       &#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            time=setInterval(moveL,<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">       &#125;)</span><br><span class="line">       </span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+<p>demo地址：<a href="http://127.0.0.1:4000/demo/slide.html" target="_blank" rel="external">http://127.0.0.1:4000/demo/slide.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/04/你敢点吗/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你敢点吗???</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="如何制作一个无缝轮播图-幻灯片" data-title="如何制作一个无缝轮播图(幻灯片)" data-url="gdutwyg.github.io/2016/05/11/如何制作一个无缝轮播图-幻灯片/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 gdutwyg
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+ <div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;">
+      <a title="返回顶部">
+        <img src="/img/scrollup.png"/>
+      </a>
+ </div>
+<script src="/js/totop.js"></script>
+<script src="/js/slide.js"></script>
+
+  </div>
+</body>
+</html>
