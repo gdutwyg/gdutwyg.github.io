@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>模块化工具以及requireJS的简单入门(上) | WYG的FE空间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="究竟什么是require.js?它能干什么？看题目说是模块化工具，那究竟什么是模块化呢？下面由我一一道来。讲得不好不要见怪啊！哈哈哈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块化工具以及requireJS的简单入门(上)">
+<meta property="og:url" content="gdutwyg.github.io/2016/05/14/模块化工具以及requireJS的简单入门(上)/index.html">
+<meta property="og:site_name" content="WYG的FE空间">
+<meta property="og:description" content="究竟什么是require.js?它能干什么？看题目说是模块化工具，那究竟什么是模块化呢？下面由我一一道来。讲得不好不要见怪啊！哈哈哈">
+<meta property="og:updated_time" content="2016-05-14T12:48:40.237Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块化工具以及requireJS的简单入门(上)">
+<meta name="twitter:description" content="究竟什么是require.js?它能干什么？看题目说是模块化工具，那究竟什么是模块化呢？下面由我一一道来。讲得不好不要见怪啊！哈哈哈">
+  
+    <link rel="alternative" href="/atom.xml" title="WYG的FE空间" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fe.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">gdutwyg</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				    
+							<li><a href="/archives">所有文章</a></li>
+				    
+
+					  <li>
+							<a title="试一试吧，有惊喜" href='javascript:(   function() {
+								function c() {
+									var e = document.createElement("link");
+									e.setAttribute("type", "text/css");
+									e.setAttribute("rel", "stylesheet");
+									e.setAttribute("href", f);
+									e.setAttribute("class", l);
+									document.body.appendChild(e)
+								}
+							 
+								function h() {
+									var e = document.getElementsByClassName(l);
+									for (var t = 0; t < e.length; t++) {
+										document.body.removeChild(e[t])
+									}
+								}
+							 
+								function p() {
+									var e = document.createElement("div");
+									e.setAttribute("class", a);
+									document.body.appendChild(e);
+									setTimeout(function() {
+										document.body.removeChild(e)
+									}, 100)
+								}
+							 
+								function d(e) {
+									return {
+										height : e.offsetHeight,
+										width : e.offsetWidth
+									}
+								}
+							 
+								function v(i) {
+									var s = d(i);
+									return s.height > e && s.height < n && s.width > t && s.width < r
+								}
+							 
+								function m(e) {
+									var t = e;
+									var n = 0;
+									while (!!t) {
+										n += t.offsetTop;
+										t = t.offsetParent
+									}
+									return n
+								}
+							 
+								function g() {
+									var e = document.documentElement;
+									if (!!window.innerWidth) {
+										return window.innerHeight
+									} else if (e && !isNaN(e.clientHeight)) {
+										return e.clientHeight
+									}
+									return 0
+								}
+							 
+								function y() {
+									if (window.pageYOffset) {
+										return window.pageYOffset
+									}
+									return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+								}
+							 
+								function E(e) {
+									var t = m(e);
+									return t >= w && t <= b + w
+								}
+							 
+								function S() {
+									var e = document.createElement("audio");
+									e.setAttribute("class", l);
+									e.src = i;
+									e.loop = false;
+									e.addEventListener("canplay", function() {
+										setTimeout(function() {
+											x(k)
+										}, 500);
+										setTimeout(function() {
+											N();
+											p();
+											for (var e = 0; e < O.length; e++) {
+												T(O[e])
+											}
+										}, 15500)
+									}, true);
+									e.addEventListener("ended", function() {
+										N();
+										h()
+									}, true);
+									e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+									document.body.appendChild(e);
+									e.play()
+								}
+							 
+								function x(e) {
+									e.className += " " + s + " " + o
+								}
+							 
+								function T(e) {
+									e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+								}
+							 
+								function N() {
+									var e = document.getElementsByClassName(s);
+									var t = new RegExp("\\b" + s + "\\b");
+									for (var n = 0; n < e.length; ) {
+										e[n].className = e[n].className.replace(t, "")
+									}
+								}
+							 
+								var e = 30;
+								var t = 30;
+								var n = 350;
+								var r = 350;
+								var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+								var s = "mw-harlem_shake_me";
+								var o = "im_first";
+								var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+								var a = "mw-strobe_light";
+								var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+								var l = "mw_added_css";
+								var b = g();
+								var w = y();
+								var C = document.getElementsByTagName("*");
+								var k = null;
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										if (E(A)) {
+											k = A;
+											break
+										}
+									}
+								}
+								if (A === null) {
+									console.warn("Could not find a node of the right size. Please try a different page.");
+									return
+								}
+								c();
+								S();
+								var O = [];
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										O.push(A)
+									}
+								}
+		            })()'>你敢点吗？</a>
+            </li>
+
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gdutwyg" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2944811073/home?wvr=5&lf=reg" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yu-zhi-san-da" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo主题/" style="font-size: 20px;">hexo主题</a> <a href="/tags/前端杂谈/" style="font-size: 10px;">前端杂谈</a> <a href="/tags/技术杂谈/" style="font-size: 10px;">技术杂谈</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gdutwyg.github.io/">正在更新中请静候</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁？一个即将毕业的大四狗，一个可怜巴巴的单身狗，一个即将踏入职场的前端狗</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">gdutwyg</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/fe.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">gdutwyg</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		       <li>
+							<a title="试一试吧，有惊喜" href='javascript:(   function() {
+								function c() {
+									var e = document.createElement("link");
+									e.setAttribute("type", "text/css");
+									e.setAttribute("rel", "stylesheet");
+									e.setAttribute("href", f);
+									e.setAttribute("class", l);
+									document.body.appendChild(e)
+								}
+							 
+								function h() {
+									var e = document.getElementsByClassName(l);
+									for (var t = 0; t < e.length; t++) {
+										document.body.removeChild(e[t])
+									}
+								}
+							 
+								function p() {
+									var e = document.createElement("div");
+									e.setAttribute("class", a);
+									document.body.appendChild(e);
+									setTimeout(function() {
+										document.body.removeChild(e)
+									}, 100)
+								}
+							 
+								function d(e) {
+									return {
+										height : e.offsetHeight,
+										width : e.offsetWidth
+									}
+								}
+							 
+								function v(i) {
+									var s = d(i);
+									return s.height > e && s.height < n && s.width > t && s.width < r
+								}
+							 
+								function m(e) {
+									var t = e;
+									var n = 0;
+									while (!!t) {
+										n += t.offsetTop;
+										t = t.offsetParent
+									}
+									return n
+								}
+							 
+								function g() {
+									var e = document.documentElement;
+									if (!!window.innerWidth) {
+										return window.innerHeight
+									} else if (e && !isNaN(e.clientHeight)) {
+										return e.clientHeight
+									}
+									return 0
+								}
+							 
+								function y() {
+									if (window.pageYOffset) {
+										return window.pageYOffset
+									}
+									return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+								}
+							 
+								function E(e) {
+									var t = m(e);
+									return t >= w && t <= b + w
+								}
+							 
+								function S() {
+									var e = document.createElement("audio");
+									e.setAttribute("class", l);
+									e.src = i;
+									e.loop = false;
+									e.addEventListener("canplay", function() {
+										setTimeout(function() {
+											x(k)
+										}, 500);
+										setTimeout(function() {
+											N();
+											p();
+											for (var e = 0; e < O.length; e++) {
+												T(O[e])
+											}
+										}, 15500)
+									}, true);
+									e.addEventListener("ended", function() {
+										N();
+										h()
+									}, true);
+									e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+									document.body.appendChild(e);
+									e.play()
+								}
+							 
+								function x(e) {
+									e.className += " " + s + " " + o
+								}
+							 
+								function T(e) {
+									e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+								}
+							 
+								function N() {
+									var e = document.getElementsByClassName(s);
+									var t = new RegExp("\\b" + s + "\\b");
+									for (var n = 0; n < e.length; ) {
+										e[n].className = e[n].className.replace(t, "")
+									}
+								}
+							 
+								var e = 30;
+								var t = 30;
+								var n = 350;
+								var r = 350;
+								var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+								var s = "mw-harlem_shake_me";
+								var o = "im_first";
+								var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+								var a = "mw-strobe_light";
+								var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+								var l = "mw_added_css";
+								var b = g();
+								var w = y();
+								var C = document.getElementsByTagName("*");
+								var k = null;
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										if (E(A)) {
+											k = A;
+											break
+										}
+									}
+								}
+								if (A === null) {
+									console.warn("Could not find a node of the right size. Please try a different page.");
+									return
+								}
+								c();
+								S();
+								var O = [];
+								for (var L = 0; L < C.length; L++) {
+									var A = C[L];
+									if (v(A)) {
+										O.push(A)
+									}
+								}
+		            })()'>你敢点吗？</a>
+           </li>
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gdutwyg" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2944811073/home?wvr=5&lf=reg" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yu-zhi-san-da" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-模块化工具以及requireJS的简单入门(上)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/14/模块化工具以及requireJS的简单入门(上)/" class="article-date">
+  	<time datetime="2016-05-14T05:14:02.000Z" itemprop="datePublished">2016-05-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模块化工具以及requireJS的简单入门(上)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端杂谈/">前端杂谈</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>究竟什么是require.js?它能干什么？看题目说是模块化工具，那究竟什么是模块化呢？下面由我一一道来。讲得不好不要见怪啊！哈哈哈<br><a id="more"></a>   </p>
+<h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a><strong>第一部分</strong></h1><h3 id="1-什么是模块化？"><a href="#1-什么是模块化？" class="headerlink" title="1.什么是模块化？"></a><strong>1.什么是模块化？</strong></h3><p>   <strong>摘要</strong>:</p>
+<blockquote>
+<p>&nbsp; &nbsp; 随着网站逐渐变成”互联网应用程序”，嵌入网页的Javascript代码越来越庞大，越来越复杂。<br>网页越来越像桌面程序，需要一个团队分工协作、进度管理、单元测试等等……开发者不得不使用软件工程的方法，管理网页的业务逻辑。<br>Javascript模块化编程，已经成为一个迫切的需求。理想情况下，开发者只需要实现核心的业务逻辑，其他都可以加载别人已经写好的模块。<br>但是，Javascript不是一种模块化编程语言，它不支持 <strong>“类”（class）</strong>，更遑论 <strong>“模块”（module）</strong>了。（正在制定中的ECMAScript标准第六版，将正式支持”类”和”模块”，但还需要很长时间才能投入实用。）<br>Javascript社区做了很多努力，在现有的运行环境中，实现”模块”的效果。</p>
+</blockquote>
+<h4 id="1-1-原始的写法"><a href="#1-1-原始的写法" class="headerlink" title="1.1 原始的写法"></a><strong>1.1 原始的写法</strong></h4><p>模块就是实现特定功能的一组方法。<br>只要把不同的函数（以及记录状态的变量）简单地放在一起，就算是一个模块。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">m1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　<span class="comment">//...</span></span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">m2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　<span class="comment">//...</span></span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上面的函数m1()和m2()，组成一个模块。使用的时候，直接调用就行了。<br>这种做法的缺点很明显：<strong>“污染”了全局变量</strong>，无法保证不与其他模块发生变量名冲突，而且模块成员之间看不出直接关系。</p>
+</blockquote>
+<h4 id="1-2、对象写法"><a href="#1-2、对象写法" class="headerlink" title="1.2、对象写法"></a><strong>1.2、对象写法</strong></h4><p>为了解决上面的缺点，可以把模块写成一个对象，所有的模块成员都放到这个对象里面。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">var</span> module1 = <span class="keyword">new</span> <span class="built_in">Object</span>(&#123;</span><br><span class="line">　　　　_count : <span class="number">0</span>,</span><br><span class="line">　　　　m1 : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　<span class="comment">//...</span></span><br><span class="line">　　　　&#125;,</span><br><span class="line">　　　　m2 : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　<span class="comment">//...</span></span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上面的函数m1()和m2(），都封装在module1对象里。使用的时候，就是调用这个对象的属性。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module1.m1();</span><br></pre></td></tr></table></figure>
+<p>但是，这样的写法会 <strong>暴露所有模块成员</strong>，内部状态可以被外部改写。比如，外部代码可以直接改变内部计数器的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　module1._count = <span class="number">5</span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="1-3、立即执行函数写法"><a href="#1-3、立即执行函数写法" class="headerlink" title="1.3、立即执行函数写法"></a><strong>1.3、立即执行函数写法</strong></h4><p>使用”立即执行函数”（Immediately-Invoked Function Expression，IIFE），可以达到 <strong>不暴露私有成员</strong>的目的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> module1 = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　<span class="keyword">var</span> _count = <span class="number">0</span>;</span><br><span class="line">　　　　<span class="keyword">var</span> m1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　<span class="comment">//...</span></span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　<span class="keyword">var</span> m2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　<span class="comment">//...</span></span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　<span class="keyword">return</span> &#123;</span><br><span class="line">　　　　　　m1 : m1,</span><br><span class="line">　　　　　　m2 : m2</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;)();</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用上面的写法，外部代码无法读取内部的_count变量。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　<span class="built_in">console</span>.info(module1._count); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>module1就是Javascript模块的基本写法。下面，再对这种写法进行加工。</p>
+</blockquote>
+<h4 id="1-4、放大模式"><a href="#1-4、放大模式" class="headerlink" title="1.4、放大模式"></a><strong>1.4、放大模式</strong></h4><p>如果一个模块很大，必须分成几个部分，或者一个模块需要继承另一个模块，这时就有必要采用 <strong>“放大模式”</strong>（augmentation）。<br>　<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">var</span> module1 = (<span class="function"><span class="keyword">function</span> (<span class="params">mod</span>)</span>&#123;</span><br><span class="line">　　　　mod.m3 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">　　　　　　<span class="comment">//...</span></span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　<span class="keyword">return</span> mod;</span><br><span class="line">　　&#125;)(module1);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上面的代码为module1模块添加了一个新方法m3()，然后返回新的module1模块。</p>
+</blockquote>
+<h4 id="1-5、宽放大模式（Loose-augmentation）"><a href="#1-5、宽放大模式（Loose-augmentation）" class="headerlink" title="1.5、宽放大模式（Loose augmentation）"></a><strong>1.5、宽放大模式（Loose augmentation）</strong></h4><p>在浏览器环境中，模块的各个部分通常都是从网上获取的，有时无法知道哪个部分会先加载。如果采用上一节的写法，第一个执行的部分有可能加载一个不存在空对象，这时就要采用”宽放大模式”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">var</span> module1 = ( <span class="function"><span class="keyword">function</span> (<span class="params">mod</span>)</span>&#123;</span><br><span class="line">　　　　<span class="comment">//...</span></span><br><span class="line">　　　　<span class="keyword">return</span> mod;</span><br><span class="line">　　&#125;)(<span class="built_in">window</span>.module1 || &#123;&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>与”放大模式”相比，＂宽放大模式＂就是”立即执行函数”的参数可以是 <strong>空对象</strong>。</p>
+</blockquote>
+<h4 id="1-6、输入全局变量"><a href="#1-6、输入全局变量" class="headerlink" title="1.6、输入全局变量"></a><strong>1.6、输入全局变量</strong></h4><p>独立性是模块的重要特点，模块内部最好不与程序的其他部分直接交互。<br>为了在模块内部调用全局变量，必须显式地将其他变量输入模块。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> module1 = (<span class="function"><span class="keyword">function</span> (<span class="params">$, YAHOO</span>) </span>&#123;</span><br><span class="line">　　　　<span class="comment">//...</span></span><br><span class="line">　　&#125;)(jQuery, YAHOO);</span><br></pre></td></tr></table></figure></p>
+<p>上面的module1模块需要使用jQuery库和YUI库，就把这两个库（其实是两个模块）当作参数输入module1。这样做除了保证模块的独立性，还使得模块之间的依赖关系变得明显。</p>
+<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a><strong>第二部分</strong></h1><p>讲完了什么是模块化，Javascript模块的基本写法之后，下面聊聊如何规范地使用模块。</p>
+<h3 id="2-1、模块的规范"><a href="#2-1、模块的规范" class="headerlink" title="2.1、模块的规范"></a><strong>2.1、模块的规范</strong></h3><p>先想一想，为什么模块很重要？<br>因为有了模块，我们就可以更方便地使用别人的代码，想要什么功能，就加载什么模块。<br>但是，这样做有一个前提，那就是大家必须以同样的方式编写模块，否则你有你的写法，我有我的写法，岂不是乱了套！考虑到Javascript模块现在还没有官方规范，这一点就更重要了。<br>目前，通行的Javascript模块规范共有两种：<strong>CommonJS</strong>和 <strong>AMD</strong>。我主要介绍AMD，但是要先从CommonJS讲起。</p>
+<h3 id="2-2、CommonJS"><a href="#2-2、CommonJS" class="headerlink" title="2.2、CommonJS"></a><strong>2.2、CommonJS</strong></h3><p> 2009年，美国程序员Ryan Dahl创造了node.js项目，将javascript语言用于服务器端编程。</p>
+<p>这标志”Javascript模块化编程”正式诞生。因为老实说，在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在  <strong>服务器端</strong>，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。<br>node.js的模块系统，就是参照CommonJS规范实现的。在CommonJS中，有一个全局性方法require()，用于加载模块。假定有一个数学模块math.js，就可以像下面这样加载。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</span><br><span class="line">然后，就可以调用模块提供的方法：</span><br><span class="line">　　<span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</span><br><span class="line">　　math.add(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure></p>
+<p>  因为这个系列主要针对浏览器编；不涉及nodejs，所以对CommonJS就不多做介绍了。我们在这里只要知道，require()用于加载模块就行了。</p>
+<h3 id="2-3、浏览器环境"><a href="#2-3、浏览器环境" class="headerlink" title="2.3、浏览器环境"></a><strong>2.3、浏览器环境</strong></h3><p>有了服务器端模块以后，很自然地，大家就想要客户端模块。而且最好两者能够兼容，一个模块不用修改，在服务器和浏览器都可以运行。<br>但是，由于一个重大的局限，使得CommonJS规范不适用于浏览器环境。还是上一节的代码，如果在浏览器中运行，会有一个很大的问题，你能看出来吗？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</span><br><span class="line">　　math.add(<span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure></p>
+<p>第二行math.add(2, 3)，在第一行require(‘math’)之后运行，因此必须等math.js加载完成。也就是说，如果加载时间很长，整个应用就会停在那里等。<br>这对服务器端不是一个问题，因为所有的模块都存放在本地硬盘，可以同步加载完成，等待时间就是硬盘的读取时间。但是，对于浏览器，这却是一个大问题，因为模块都放在服务器端，等待时间取决于网速的快慢，可能要等很长时间，浏览器处于”假死”状态。<br>因此，浏览器端的模块，不能采用”同步加载”（synchronous），只能采用”异步加载”（asynchronous）。这就是AMD规范诞生的背景.</p>
+<h3 id="2-4-AMD"><a href="#2-4-AMD" class="headerlink" title="2.4 AMD"></a><strong>2.4 AMD</strong></h3><p>&nbsp;&nbsp;AMD是 <strong>“Asynchronous Module Definition”</strong>的缩写，意思就是 <strong>“异步模块定义”</strong>。它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。<br>AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两个参数：</p>
+<blockquote>
+<p>　　require([module], callback);</p>
+</blockquote>
+<p>第一个参数[module]，是一个数组，里面的成员就是要加载的模块；第二个参数callback，则是加载成功之后的回调函数。如果将前面的代码改写成AMD形式，就是下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　<span class="built_in">require</span>([<span class="string">'math'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">math</span>) </span>&#123;</span><br><span class="line">　　　　math.add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">　　&#125;);</span><br></pre></td></tr></table></figure>
+<p>math.add()与math模块加载不是同步的，浏览器不会发生假死。所以很显然，AMD比较适合浏览器环境。</p>
+<p>目前，主要有两个Javascript库实现了AMD规范：<strong>require.js</strong>和 <strong>curl.js</strong>。本系列的下部分，将通过介绍require.js，进一步讲解AMD的用法，以及如何将模块化编程投入实战。</p>
+<p>转载来自 ：<br>     <a href="http://www.ruanyifeng.com/blog/2012/10/javascript_module.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/10/javascript_module.html</a><br>     <a href="http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/11/如何制作一个无缝轮播图-幻灯片/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何制作一个无缝轮播图(幻灯片)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="模块化工具以及requireJS的简单入门(上)" data-title="模块化工具以及requireJS的简单入门(上)" data-url="gdutwyg.github.io/2016/05/14/模块化工具以及requireJS的简单入门(上)/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 gdutwyg
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+ <div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;">
+      <a title="返回顶部">
+        <img src="/img/scrollup.png"/>
+      </a>
+ </div>
+<script src="/js/totop.js"></script>
+<script src="/js/slide.js"></script>
+
+  </div>
+</body>
+</html>
