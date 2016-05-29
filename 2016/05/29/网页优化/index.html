@@ -4,20 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>hexo安装过程中的一些tips | WYG的FE空间</title>
+  <title>web前端优化黄金法则 | WYG的FE空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
+  <meta name="description" content="(雅虎前端优化34条黄金规则，下面我只罗列用得比较普遍的)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo安装过程中的一些tips">
-<meta property="og:url" content="gdutwyg.github.io/2016/04/25/hexo安装过程中的一些tips/index.html">
+<meta property="og:title" content="web前端优化黄金法则">
+<meta property="og:url" content="gdutwyg.github.io/2016/05/29/网页优化/index.html">
 <meta property="og:site_name" content="WYG的FE空间">
-<meta property="og:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
-<meta property="og:image" content="gdutwyg.github.io/img/express文件.png">
-<meta property="og:updated_time" content="2016-05-05T15:55:47.539Z">
+<meta property="og:description" content="(雅虎前端优化34条黄金规则，下面我只罗列用得比较普遍的)">
+<meta property="og:updated_time" content="2016-05-29T15:30:48.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo安装过程中的一些tips">
-<meta name="twitter:description" content="在node.js安装完成之后安装依赖包express;但是使用express -v出现了 express不是内部或外部命令,这是为啥？">
-<meta name="twitter:image" content="gdutwyg.github.io/img/express文件.png">
+<meta name="twitter:title" content="web前端优化黄金法则">
+<meta name="twitter:description" content="(雅虎前端优化34条黄金规则，下面我只罗列用得比较普遍的)">
   
     <link rel="alternative" href="/atom.xml" title="WYG的FE空间" type="application/atom+xml">
   
@@ -495,11 +493,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-hexo安装过程中的一些tips" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-网页优化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/25/hexo安装过程中的一些tips/" class="article-date">
-  	<time datetime="2016-04-25T11:48:08.352Z" itemprop="datePublished">2016-04-25</time>
+      <a href="/2016/05/29/网页优化/" class="article-date">
+  	<time datetime="2016-05-29T15:15:01.000Z" itemprop="datePublished">2016-05-29</time>
 </a>
     </div>
   
@@ -512,7 +510,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo安装过程中的一些tips
+      web前端优化黄金法则
     </h1>
   
 
@@ -521,7 +519,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo主题/">hexo主题</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端杂谈/">前端杂谈</a></li></ul>
 	</div>
 
         
@@ -532,16 +530,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>   在node.js安装完成之后安装依赖包express;<br>但是使用express -v出现了 <strong>express不是内部或外部命令</strong>,这是为啥？</p>
+        <p>(雅虎前端优化34条黄金规则，下面我只罗列用得比较普遍的)</p>
 <a id="more"></a>
-<p>答：原来,最新express4.0版本中将 <strong>命令工具</strong>分离出来了,所以我们还需要安装一个<em>命令工具</em>,命令如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> npm install -g express-generator</span><br><span class="line">(ps:安装指定版本时需要使用npm install -g express@3.5.0这样的命令)</span><br></pre></td></tr></table></figure>
-<p>接下来我们可以测试一下express,测试版本用express -V<br>于是我使用express创建一个工程:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express helloworld (ps:推荐用GitShell);</span><br></pre></td></tr></table></figure>
-<p><img src="/img/express文件.png" alt="img"></p>
-<p>在helloworld文件夹下新建helloworld.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">"http"</span>);</span><br><span class="line">http.createServer(<span class="keyword">function</span>(request, response) &#123;  </span><br><span class="line">    response.writeHead(200, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span>&#125;);  </span><br><span class="line">    response.write(<span class="string">"Hello World"</span>);  </span><br><span class="line">    response.end();</span><br><span class="line">&#125;).listen(8888);</span><br><span class="line">console.log(<span class="string">"nodejs start listen 8888 port!"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>进入node.js command prompt 命令窗口,进入helloworld当前目录</p>
-<p>键入node helloworld.js; 打开地址<a href="http://127.0.0.1:8888/" target="_blank" rel="external">http://127.0.0.1:8888/</a> 即可看见效果</p>
+<h3 id="1-尽量减少HTTP请求次数"><a href="#1-尽量减少HTTP请求次数" class="headerlink" title=" 1.尽量减少HTTP请求次数"></a><strong> 1.尽量减少HTTP请求次数</strong></h3><blockquote>
+<ul>
+<li><p>网页加载中大部分时间都在下载js，css，flash，图片</p>
+</li>
+<li><p>合并文件 css，js，图片（css sprite）</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="2-使用内容分发网络-CDN"><a href="#2-使用内容分发网络-CDN" class="headerlink" title=" 2.使用内容分发网络 (CDN)"></a><strong> 2.使用内容分发网络 (CDN)</strong></h3><blockquote>
+<p>  用户与你网站服务器的接近程度会影响响应时间的长短。把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。<br><strong>内容分发网络（Content Delivery Network，CDN）</strong>是由一系列分散到各个不同地理位置上的Web服务器组成的，它提高了网站内容的传输速度。用于向用户传输内容的服务器主要是根据和用户在网络上的靠近程度来指定的。例如，拥有最少网络跳数（network hops）和响应速度最快的服务器会被选定。</p>
+</blockquote>
+<hr>
+<h3 id="3-使用外部JavaScript和CSS"><a href="#3-使用外部JavaScript和CSS" class="headerlink" title=" 3.使用外部JavaScript和CSS"></a><strong> 3.使用外部JavaScript和CSS</strong></h3><blockquote>
+<p>很多性能规则都是关于如何处理外部文件的。但是，在你采取这些措施前你可能会问到一个更基本的问题：<strong>JavaScript和CSS是应该放在外部文件中呢还是把它们放在页面本身之内呢？</strong></p>
+<p>在实际应用中使用外部文件可以提高页面速度，因为 <strong>JavaScript和CSS文件都能在浏览器中产生缓存</strong>。内置在HTML文档中的 JavaScript和CSS则会在每次请求中随HTML文档重新下载。这虽然减少了HTTP请求的次数，却增加了HTML文档的大小。</p>
+<p>从另一方面来说，’如果外部文件中的JavaScript和CSS被浏览器缓存，在没有增加HTTP请求次数的同时可以减少HTML文档的大小。’<br>关键问题是，外部JavaScript和CSS文件缓存的频率和请求HTML文档的次数有关。虽然有一定的难度，但是仍然有一些指标可以一测量它。如果一 个会话中用户会浏览你网站中的多个页面，并且这些页面中会重复使用相同的脚本和样式表，缓存外部文件就会带来更大的益处。</p>
+</blockquote>
+<hr>
+<h3 id="4-把脚本置于页面底部"><a href="#4-把脚本置于页面底部" class="headerlink" title=" 4.把脚本置于页面底部"></a><strong> 4.把脚本置于页面底部</strong></h3><blockquote>
+<p>脚本带来的问题就是 <strong>它阻止了页面的平行下载。</strong> </p>
+<p>一个经常用到的替代方法就是使用延迟脚本。DEFER属性表明脚本中没有包含document.write，它告诉浏览器继续显示。不幸的 是，Firefox并不支持DEFER属性。在Internet Explorer中，脚本可能会被延迟但效果也不会像我们所期望的那样。如果脚本可以被延迟，那么它就可以移到页面的底部。这会让你的页面加载的快一点。</p>
+</blockquote>
+<hr>
+<h3 id="5-优化图片大小"><a href="#5-优化图片大小" class="headerlink" title=" 5.优化图片大小"></a><strong> 5.优化图片大小</strong></h3><blockquote>
+<p>尽量压缩图片大小，提高加载时间.</p>
+<p>要记住，在终端用户的响应时间中有80%到90%的响应时间用于下载图像、样式表、脚本、Flash等页面内容。这就是网站性能黄金守则。</p>
+</blockquote>
+<hr>
+<h3 id="6-减少DOM访问"><a href="#6-减少DOM访问" class="headerlink" title=" 6.减少DOM访问"></a><strong> 6.减少DOM访问</strong></h3><blockquote>
+<p>使用JavaScript访问DOM元素比较慢，因此为了获得更多的应该页面，应该做到：</p>
+<ul>
+<li>缓存已经访问过的有关元素</li>
+<li>线下更新完节点之后再将它们添加到文档树中</li>
+<li>避免使用JavaScript来修改页面布局</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="7-不要出现404错误"><a href="#7-不要出现404错误" class="headerlink" title=" 7.不要出现404错误"></a><strong> 7.不要出现404错误</strong></h3><blockquote>
+<p>HTTP请求时间消耗是很大的，因此使用HTTP请求来获得一个没有用处的响应（例如404没有找到页面）是完全没有必要的，它只会降低用户体验而不会有一点好处。</p>
+<p>有些站点把404错误响应页面改为“你是不是要找<em>*</em>”，这虽然改进了用户体验但是同样也会浪费服务器资源（如数据库等）。最糟糕的情况是指向外部 JavaScript的链接出现问题并返回404代码。首先，这种加载会破坏并行加载；其次浏览器会把试图在返回的404响应内容中找到可能有用的部分当 作JavaScript代码来执行。</p>
+</blockquote>
+<hr>
+<h3 id="8-预加载"><a href="#8-预加载" class="headerlink" title=" 8.预加载"></a><strong> 8.预加载</strong></h3><blockquote>
+<ul>
+<li>在用户空闲时加载以后要用到的 img,css,js,这些都可以缓存</li>
+<li>在这个页面加载下个页面要用到的页面组件</li>
+<li>同样可以把这些要加载的放到 onload 里面</li>
+</ul>
+</blockquote>
+<hr>
+<p>（ps:还有很多，我就不一一罗列了，雅虎前端优化总共34条，大家可自行百度或谷歌）</p>
 
       
     </div>
@@ -551,18 +593,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/25/hexo的一些指令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          hexo的一些指令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/24/如何在github上面部署hexo主题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何在github上面部署hexo主题</div>
+    <a href="/2016/05/14/模块化工具以及requireJS的简单入门-下/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">模块化工具以及requireJS的简单入门(下)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -597,7 +630,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hexo安装过程中的一些tips" data-title="hexo安装过程中的一些tips" data-url="gdutwyg.github.io/2016/04/25/hexo安装过程中的一些tips/"></div>
+	<div class="ds-thread" data-thread-key="网页优化" data-title="web前端优化黄金法则" data-url="gdutwyg.github.io/2016/05/29/网页优化/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
